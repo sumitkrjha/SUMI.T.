@@ -1,0 +1,31 @@
+.michroma-regular {
+    font-family: "Michroma", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+/* Scroll bar */
+*::-webkit-scrollbar {
+  width: 6px; /* make the scrollbar a little thinner */
+  background-color: white; /* set the scrollbar color */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #141c3a; /* set the scrollbar thumb color */
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent; /* set the scrollbar track color */
+}
+
+
+.anime{
+  animation: come-slow 1s linear;
+}
+
+@keyframes come-slow {
+  0% {transform: translateY(-100px);}
+ 50%{transform: translateY(4px);}
+ 100%{transform: translateY(7px);}
+}
