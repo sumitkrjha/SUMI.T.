@@ -1,8 +1,130 @@
 import React from 'react'
+import OsteoAI from "../assets/projects/OsteoAI.png"
+import Devlinks from "../assets/projects/devlinks.png"
+import Portfolio from "../assets/projects/portfolio.png"
+import github from "../assets/github.svg"
+import forwardArrow from "../assets/forwardArrow.svg"
+import onrender from "../assets/onrender.png"
+import youtube from "../assets/youtube.svg"
 
 const Project = () => {
+  const listStyle='h-9 w-auto min-w-28 border-2 border-blue-violet p-2 rounded-full flex items-center justify-center font-semibold bg-blue-violet text-white hover:bg-white hover:border-none hover:text-black';
+  
+  const ProjectDetails=[
+    {
+      image: OsteoAI,
+      heading: 'OsteoAI: AI powered Web App',
+      description:'OsteoAI is a web application that assists medical professionals in diagnosing bone tumors or fractures using X-ray analysis.', 
+      points:[
+        'AI Analysis: Utilizes AI to analyze X-ray images.','Secure Access: JWT authentication restricts access to authorized professionals.',
+        'Streamlined Workflow: Formik simplifies data entry and validation.','Scalable Storage: MongoDB Atlas securely stores medical data.','Efficient Communication: Context API facilitates data exchange.'
+      ],
+      tech:['ReactJS', 'Tailwind CSS', 'Context API', 'Formik', 'NodeJS', 'ExpressJS', 'MongoDB', 'JWT Auth'],
+      links:[
+        {
+          Github:'https://github.com/sumitkrjha/OsteoAI',
+          Live:'https://osteoai.onrender.com',
+          Video:'https://youtube.com',
+        }
+      ]
+    },
+    {
+      image: Devlinks,
+      heading: 'Devlinks: One Link to Connect All',
+      description: 'DevLinks, a streamlined developer link management tool, is a Frontend application designed to empower developers by offering a centralized platform for managing and sharing their development resources.',
+      points:[
+        'Centralized Hub: Manage all your development platform links (code, docs, etc.) in one place using ReactJS dynamic interface.','Effortless Profile Creation: Formik streamlines user profile and developer link creation with validation for accuracy.',
+        'Live Preview: See how your DevLinks profile appears to others with ReactJS real-time preview as you edit.','One-Click Sharing: Seamlessly share your curated resources with colleagues.'
+      ],
+      tech:['ReactJS', 'Tailwind CSS', 'Redux', 'Formik'],
+      links:[
+        {
+          Github:'https://github.com/sumitkrjha/devlinks',
+          Live:'https://devlinks-nsir.onrender.com',
+          Video:'https://youtube.com',
+        }
+      ]
+    },
+    {
+      image: Portfolio,
+      heading: 'SUMI.T.',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo nobis molestiae sapiente ad obcaecati repellendus ipsam. Soluta provident optio eaque ipsum accusamus, aliquid possimus ipsam dicta, dolor error repellendus nobis et blanditiis fugiat ex sequi voluptatibus nostrum. Ex rem aliquam praesentium modi nemo atque corrupti velit, quam consectetur labore reiciendis.',
+      points:[
+        'AI Analysis: Utilizes AI to analyze X-ray images.','Secure Access: JWT authentication restricts access to authorized professionals.',
+        'Streamlined Workflow: Formik simplifies data entry and validation.','Scalable Storage: MongoDB Atlas securely stores medical data.','Efficient Communication: Context API facilitates data exchange.'
+      ],
+      tech:['ReactJS', 'Tailwind CSS'],
+      links:[
+        {
+          name:'osteoai',
+          Github:'https://github.com/sumitkrjha/SUMI.T.',
+          Live:'https://sumitkrjha.onrender.com',
+          Video:'https://youtube.com',
+        }
+      ]
+    }
+  ]
+
   return (
-    <div className='relative top-[402px] h-auto w-full bg-green-500'>Project Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates dolorum earum perferendis libero repellat? Atque illo autem fugiat odio a alias debitis nam mollitia impedit dolor ex ducimus asperiores, eveniet cumque dolores in soluta assumenda sint molestiae facilis officiis laudantium quo doloremque! Deserunt architecto ullam illo odit voluptatibus, recusandae et, itaque rem omnis tempore incidunt porro ea cumque. Voluptatum perferendis delectus animi nisi culpa sit, quibusdam ullam illum cumque sed dolor, aspernatur eligendi! Nisi natus sed eaque vel quasi incidunt deserunt ipsam pariatur alias nostrum? Ab, eligendi accusantium ipsum esse veritatis laborum cum molestiae cupiditate commodi quam soluta adipisci c</div>
+    <>
+    <div id="wrapper" className='absolute top-[158rem] w-full h-[80rem] bg-blue-violet'></div>
+    <div id="projectWrapper" className='relative top-[402px] h-auto w-full pt-28 px-20 flex flex-col items-center justify-center'>
+      <h1 className='text-4xl text-deep-blue font-bold text-center mb-1'>My Personal Projects</h1>
+      <hr className='h-1 w-36 bg-lime-green mb-10'/>
+      {ProjectDetails.map((items, index)=>(
+        <div id="projectContainer" className={`h-auto w-[90%] p-5 mb-5 border-2 text-white bg-deep-blue rounded-3xl flex flex-col xl:flex-row items-center justify-center hover:scale-105 transition-all ${index==1 ? 'flex-row-reverse':'flex-row'}`}>
+          <div id="imageContainer" className='w-2/5 h-auto flex items-center'>
+            <img src={items.image} alt="" className='rounded-xl h-72' />
+          </div>
+          <div id="detailsContainer" className='w-3/5 h-auto py-5 pr-5 pl-10 '>
+              <h1 className='text-2xl font-bold  text-lime-green text-center mb-5 michroma-regular'>{items.heading}</h1>
+              <p className=' text-base text-white text-justify mb-2'>{items.description}</p>
+              <ul className='mb-8 pl-5'>
+              {items.points.map((point)=>(
+                <li className='list-decimal'>{point}</li>
+                ))}
+              </ul>
+              <ul className='h-20 w-auto flex gap-3 mb-9 items-center justify-center flex-wrap'>
+                {items.tech.map((tools)=>(
+                    <li className={listStyle}>{tools}</li>
+                ))}
+              </ul>
+           {items.links.map((buttons)=>(
+              <ul id="button" className='flex items-center justify-center gap-3'>
+                <a href={buttons.Github} target='_blank' rel='noreferrer'>
+                  <button className='text-white bg-[#24292F] hover:bg-[#1a1c20] font-medium rounded-lg text-sm h-12 w-36 px-5 py-2.5 text-center inline-flex justify-between items-center mb-2 pb-2'>
+                    <div class="flex items-center gap-2">
+                      <img src={github} alt="github" className="w-4 h-4"/>      
+                      GitHub
+                    </div>
+                      <img src={forwardArrow} alt="arrow" className="rtl:rotate-180 w-3.5 h-3.5 ms-2"/>
+                    </button>
+                </a> 
+                <a href={buttons.Live} target='_blank' rel='noreferrer'>
+                  <button className='text-white bg-blue-500 hover:bg-blue-800 font-medium rounded-lg text-sm h-12 w-36 px-5 py-2.5 text-center inline-flex justify-between items-center mb-2 pb-2'>
+                    <div class="flex items-center gap-2">
+                      <img src={onrender} alt="Live" className="w-4 h-4 "/>      
+                      Live
+                    </div>
+                      <img src={forwardArrow} alt="arrow" className="rtl:rotate-180 w-3.5 h-3.5 ms-2"/>
+                  </button>
+                </a>
+                <a href={buttons.Video} target='_blank' rel='noreferrer'>
+                  <button className='text-white bg-red-500 hover:bg-red-700 font-medium rounded-lg text-sm h-12 w-36 px-5 py-2.5 text-center inline-flex justify-between items-center mb-2 pb-2'>
+                    <div class="flex items-center gap-2">
+                      <img src={youtube} alt="Video link" className="w-4 h-4 "/>      
+                      Demo
+                    </div>
+                      <img src={forwardArrow} alt="arrow" className="rtl:rotate-180 w-3.5 h-3.5 ms-2"/>
+                  </button>
+                </a>
+              </ul>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+    </>
   )
 }
 

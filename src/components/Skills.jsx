@@ -3,23 +3,23 @@ import frontend from "../assets/frontend.png"
 import backend from "../assets/backend.png"
 import software from "../assets/softwareDevelopment.png"
 const Skills = () => {
-    const listStyle='text-lg mb-2 text-deep-blue text-center hover:text-blue-violet hover:scale-125';
+    const listStyle='text-lg mb-2 text-deep-blue text-center hover:text-blue-violet hover:scale-110';
     const skillsData=[
         {
             image: frontend,
-            heading:'Frontend',
+            heading:'Frontend Development',
             subheading:'I like to Crafting beautiful and interactive user interfaces from scratch.',
             tools:['ReactJS', 'Tailwind CSS', 'Styled Components', 'Material UI', 'Chakra UI']
         },
         {
             image: backend,
-            heading:'Backend',
+            heading:'Backend Development',
             subheading:'I like to Building robust and scalable server-side applications.',
-            tools:['NodeJS', 'ExpressJS', 'MongoDB', 'JWT Auth', 'Firebase']
+            tools:['NodeJS', 'ExpressJS', 'MongoDB', 'JWT Auth', 'Firebase', 'Deployment(Render)']
         },
         {
             image: software,
-            heading:'Engineering',
+            heading:'Software Engineering',
             subheading:'Solving complex problems with efficient and maintainable code',
             tools:['C++', 'Version control (Git)', 'SDLC', 'Computer Networks', 'Operating System']
         }
@@ -34,7 +34,7 @@ const Skills = () => {
                         <div id="imageContainer" className='h-40 w-40 p-2 mb-5 rounded-full bg-green-400 flex items-center justify-center'>
                             <img src={items.image} alt="" className='h-24 w-24' />
                         </div>
-                        <h1 className='michroma-regular font-semibold text-2xl mb-4'>{items.heading}</h1>
+                        <h1 className='font-bold text-2xl text-center text-deep-blue mb-4'>{items.heading}</h1>
                         <p className='text-md text-center mb-4'>{items.subheading}</p>
                         <h2 className='michroma-regular font-semibold text-lg text-blue-violet mb-4'>Tech & Tools:</h2>
                         {items.tools.map((tool)=>(

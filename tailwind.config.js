@@ -10,6 +10,7 @@ export default {
         'blue-violet':'#6E07F3',
         'deep-blue':'#141c3a',
         'dark-gray':'rgba(10, 10, 10, 0.9)',
+        'lime-green':'#5BE9B9',
       },
     },
   },
