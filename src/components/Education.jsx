@@ -23,14 +23,14 @@ const Education = () => {
     },
   ]
   return (
-    <div className='relative top-[27rem] p-5'>
+    <div className='relative top-[27rem] p-5 mb-8'>
       <div id="headingContainer" className='w-full h-auto flex flex-col items-center justify-center mb-10'>
         <h1 className='text-4xl font-bold text-center text-deep-blue mb-1'>Education</h1>
         <hr  className='h-1 w-20 bg-lime-green'/>
       </div>
       {education.map((items)=>(
         <div id="educationHistory" className='w-full h-auto px-10 mb-10'>
-          <h1 className='w-full text-2xl michroma-regular mb-5'>{items.degree}</h1>
+          <h1 className='w-full text-2xl michroma-regular mb-3'>{items.degree}</h1>
           <h4 className='text-lg '>{items.school}</h4>
           <h4 className='font-semibold'>{items.marks}</h4>
           <h4 className='font-bold'>{items.YOP}</h4>
