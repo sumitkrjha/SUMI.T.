@@ -68,7 +68,7 @@ const Project = () => {
   return (
     <>
     <div id="wrapper" className='absolute top-[158rem] w-full h-[80rem] bg-blue-violet'></div>
-    <div id="projectWrapper" className='relative top-[402px] h-auto w-full pt-28 px-20 flex flex-col items-center justify-center'>
+    <div id="projectWrapper" className='relative top-[402px] h-auto w-full pt-28 px-20 mb-10 flex flex-col items-center justify-center'>
       <h1 className='text-4xl text-deep-blue font-bold text-center mb-1'>My Personal Projects</h1>
       <hr className='h-1 w-36 bg-lime-green mb-10'/>
       {ProjectDetails.map((items, index)=>(
@@ -84,7 +84,7 @@ const Project = () => {
                 <li className='list-decimal'>{point}</li>
                 ))}
               </ul>
-              <ul className='h-20 w-auto flex gap-3 mb-9 items-center justify-center flex-wrap'>
+              <ul className='h-auto w-auto flex gap-3 mb-9 items-center justify-center flex-wrap'>
                 {items.tech.map((tools)=>(
                     <li className={listStyle}>{tools}</li>
                 ))}
