@@ -72,7 +72,7 @@ const Project = () => {
       <h1 className='text-4xl text-deep-blue font-bold text-center mb-1'>My Personal Projects</h1>
       <hr className='h-1 w-36 bg-lime-green mb-10'/>
       {ProjectDetails.map((items, index)=>(
-        <div id="projectContainer" className={`h-auto w-[90%] p-5 mb-5 border-2 text-white bg-deep-blue rounded-3xl flex flex-col xl:flex-row items-center justify-center hover:scale-105 transition-all ${index==1 ? 'flex-row-reverse':'flex-row'}`}>
+        <div id="projectContainer" className={`h-auto w-[90%] p-5 mb-5 border-2 text-white bg-deep-blue rounded-3xl flex items-center justify-center hover:scale-105 transition-all ${index===1 ? 'xl:flex-row-reverse':'xl:flex-row'}`}>
           <div id="imageContainer" className='w-2/5 h-auto flex items-center'>
             <img src={items.image} alt="" className='rounded-xl h-72' />
           </div>
