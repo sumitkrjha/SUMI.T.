@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react'
 const OpenSource = () => {
   const ref=useRef(null);
   const headingRef=useRef(null);
-  const isInView=useInView(ref,{amount:"all",once:true});
+  const isInView=useInView(ref,{amount:"all"});
   const isHeadingView=useInView(headingRef,{amount:"all", once:true})
   const animation=useAnimation();
 
@@ -23,9 +23,9 @@ const OpenSource = () => {
               <div ref={headingRef} className='h-auto w-full text-4xl text-center font-bold mb-1'>Open Source</div>
               <hr  className='h-1 w-24 bg-lime-green'/>
           </div>
-          <motion.div animate={{y: isInView ? "-100%" : "0%"}} id="wrapper" className='absolute z-10 h-[100px] top-[7px] left-[559px] w-[140px] bg-blue-violet '></motion.div>
-          <motion.div animate={{y:isInView?"100%":"0%"}} id="wrapper" className='absolute z-10 h-[100px] top-[7px] left-[699px] w-[120px] bg-blue-violet '></motion.div>
-          <motion.div animate={{y:isInView?"-100%":"0%"}} id="wrapper" className='absolute z-10 h-[100px] top-[7px] left-[819px] w-[140px] bg-blue-violet '></motion.div>
+          <motion.div animate={{x: isInView ? "-32%" : "0%"}} transition={{duration:0.4, delay:0.5}} id="wrapper" className='absolute z-10 h-[100px] top-[7px] left-[559px] w-[140px] bg-blue-violet '></motion.div>
+          <motion.div animate={{y:isInView?"100%":"0%"}} transition={{duration:0.4, delay:0.5}} id="wrapper" className='absolute z-10 h-[100px] top-[7px] left-[699px] w-[120px] bg-blue-violet '></motion.div>
+          <motion.div animate={{x:isInView?"40%":"0%"}} transition={{duration:0.4, delay:0.5}} id="wrapper" className='absolute z-10 h-[100px] top-[7px] left-[819px] w-[140px] bg-blue-violet '></motion.div>
           
           <motion.div
           variants={{
