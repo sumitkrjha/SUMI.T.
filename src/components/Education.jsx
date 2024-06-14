@@ -1,6 +1,11 @@
-import React from 'react'
+import { motion, useInView } from 'framer-motion'
+import React, { useRef } from 'react'
 
 const Education = () => {
+  const ref=useRef(null);
+  const isInView=useInView(ref,{
+    once:"true"
+  });
 
   const education=[
     {
@@ -24,17 +29,23 @@ const Education = () => {
   ]
   return (
     <div className='relative top-[27rem] p-5 mb-8'>
-      <div id="headingContainer" className='w-full h-auto flex flex-col items-center justify-center mb-10'>
+      <div ref={ref} id="headingContainer" className='w-full h-auto flex flex-col items-center justify-center mb-10'>
         <h1 className='text-4xl font-bold text-center text-deep-blue mb-1'>Education</h1>
         <hr  className='h-1 w-20 bg-lime-green'/>
       </div>
       {education.map((items)=>(
-        <div id="educationHistory" className='w-full h-auto px-10 mb-10'>
+        <motion.div
+        style={{
+          transform: isInView ? "none" : "translateX(-200px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s"
+        }}
+        id="educationHistory" className='w-full h-auto px-20 mb-10'>
           <h1 className='w-full text-2xl michroma-regular mb-3'>{items.degree}</h1>
           <h4 className='text-lg '>{items.school}</h4>
           <h4 className='font-semibold'>{items.marks}</h4>
           <h4 className='font-bold'>{items.YOP}</h4>
-        </div>
+        </motion.div>
       ))}
     </div>
   )

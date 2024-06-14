@@ -1,15 +1,28 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import frontend from "../assets/frontend.png"
 import backend from "../assets/backend.png"
 import software from "../assets/softwareDevelopment.png"
+import { motion, useAnimation, useInView } from 'framer-motion'
 const Skills = () => {
+    const ref=useRef(null)
+    const isInView=useInView(ref,{once:true})
+    const animation=useAnimation()
+
+    useEffect(() => {
+        if(isInView){
+        animation.start("visible")
+        }else{
+        animation.start("hidden")
+        }
+    }, [animation,isInView])
+
     const listStyle='text-lg mb-2 text-deep-blue text-center hover:text-blue-violet hover:scale-110';
     const skillsData=[
         {
             image: frontend,
             heading:'Frontend Development',
             subheading:'I like to Crafting beautiful and interactive user interfaces from scratch.',
-            tools:['ReactJS', 'Tailwind CSS', 'Styled Components', 'Material UI', 'Chakra UI']
+            tools:['ReactJS', 'Tailwind CSS', 'Styled Components', 'Material UI', 'Chakra UI', 'Framer Motion']
         },
         {
             image: backend,
@@ -27,8 +40,17 @@ const Skills = () => {
 
   return (
     <>
-        <div id="skillsContainer" className='relative top-[440px] mb-10 px-20 h-auto w-full flex-col items-center justify-center'>
-            <div id="categoryContainer" className='h-auto w-full bg-white rounded-xl grid grid-cols-3 border-2'>
+        <div ref={ref} id="skillsContainer" className='relative top-[440px] mb-10 px-20 h-auto w-full flex-col items-center justify-center'>
+            <motion.div
+            variants={{
+            hidden:{opacity:0, x:-100},
+            visible:{opacity:1, x:0}
+            }}
+            initial="hidden"
+            animate={animation}
+            transition={{duration:0.5, delay:0.4}}
+
+            id="categoryContainer" className='h-auto w-full bg-white rounded-xl grid grid-cols-3 border-2'>
                 {skillsData.map((items)=> (
                     <div id="detailsContainer" className='border-r-2 px-7 py-10 flex flex-col items-center justify-center'>
                         <div id="imageContainer" className='h-40 w-40 p-2 mb-5 rounded-full bg-green-400 flex items-center justify-center'>
@@ -44,7 +66,7 @@ const Skills = () => {
                         ))}
                     </div>
                 ))}
-            </div>            
+            </motion.div>            
         </div>
     </>
   )

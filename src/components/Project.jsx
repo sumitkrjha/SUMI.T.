@@ -1,4 +1,3 @@
-import React from 'react'
 import OsteoAI from "../assets/projects/OsteoAI.png"
 import Devlinks from "../assets/projects/devlinks.png"
 import Portfolio from "../assets/projects/portfolio.png"
@@ -6,8 +5,25 @@ import github from "../assets/github.svg"
 import forwardArrow from "../assets/forwardArrow.svg"
 import onrender from "../assets/onrender.png"
 import youtube from "../assets/youtube.svg"
+import { useEffect, useRef } from "react"
+import { motion, useAnimation, useInView } from "framer-motion"
+
 
 const Project = () => {
+
+  const ref=useRef(null)
+  const isInView=useInView(ref,{once:true})
+  const animation=useAnimation();
+
+  useEffect(() => {
+    if(isInView){
+      animation.start("visible");
+    }else{
+      animation.start("hidden");
+    }
+   
+  }, [animation,isInView])
+  
   const listStyle='h-9 w-auto min-w-28 border-2 border-blue-violet p-2 rounded-full flex items-center justify-center font-semibold bg-blue-violet text-white hover:bg-white hover:border-none hover:text-black';
   
   const ProjectDetails=[
@@ -53,7 +69,7 @@ const Project = () => {
         'AI Analysis: Utilizes AI to analyze X-ray images.','Secure Access: JWT authentication restricts access to authorized professionals.',
         'Streamlined Workflow: Formik simplifies data entry and validation.','Scalable Storage: MongoDB Atlas securely stores medical data.','Efficient Communication: Context API facilitates data exchange.'
       ],
-      tech:['ReactJS', 'Tailwind CSS'],
+      tech:['ReactJS', 'Tailwind CSS', 'Framer Motion'],
       links:[
         {
           name:'osteoai',
@@ -68,11 +84,19 @@ const Project = () => {
   return (
     <>
     <div id="wrapper" className='absolute top-[158rem] w-full h-[80rem] bg-blue-violet'></div>
-    <div id="projectWrapper" className='relative top-[402px] h-auto w-full pt-28 px-20 mb-10 flex flex-col items-center justify-center'>
-      <h1 className='text-4xl text-deep-blue font-bold text-center mb-1'>My Personal Projects</h1>
+    <div   id="projectWrapper" className='relative top-[402px] h-auto w-full pt-28 px-20 mb-10 flex flex-col items-center justify-center'>
+      <h1 ref={ref} className='text-4xl text-deep-blue font-bold text-center mb-1'>My Personal Projects</h1>
       <hr className='h-1 w-36 bg-lime-green mb-10'/>
       {ProjectDetails.map((items, index)=>(
-        <div id="projectContainer" className={`h-auto w-[90%] p-5 mb-5 border-2 text-white bg-deep-blue rounded-3xl flex items-center justify-center hover:scale-105 transition-all ${index===1 ? 'xl:flex-row-reverse':'xl:flex-row'}`}>
+        <motion.div
+        variants={{
+          hidden:{opacity:0, x:-100},
+          visible:{opacity:1, x:0}
+        }} 
+        initial="hidden"
+        animate={animation}
+        transition={{duration:0.5, delay:0.65}}
+        id="projectContainer" className={`h-auto w-[90%] p-5 mb-5 border-2 text-white bg-deep-blue rounded-3xl flex items-center justify-center hover:scale-105 transition-all ${index===1 ? 'xl:flex-row-reverse':'xl:flex-row'}`}>
           <div id="imageContainer" className='w-2/5 h-auto flex items-center'>
             <img src={items.image} alt="" className='rounded-xl h-72' />
           </div>
@@ -121,7 +145,7 @@ const Project = () => {
               </ul>
             ))}
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
     </>
