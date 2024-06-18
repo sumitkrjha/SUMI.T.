@@ -1,12 +1,12 @@
 import React from "react";
+import profilePhoto from "../assets/profilePhoto.png";
 import { Link } from "react-router-dom";
-
-const Navbar = () => {
+const SeparateNavbar = () => {
   const menuStyle =
     "font-medium text-lg text-deep-blue hover:text-blue-violet cursor-pointer hover:translate-y-2";
   return (
     <>
-      <div id="navbarWrapper" className="h-36 w-full py-5">
+      <div id="navbarWrapper" className=" h-32 w-full py-5 mb-7">
         <div id="navbarContainer" className="h-full w-full flex px-12 ">
           <div
             id="logoContainer"
@@ -43,9 +43,15 @@ const Navbar = () => {
             </Link>
           </div>
         </div>
+        <div className="w-full h-1 bg-deep-blue"></div>
+        <img
+          src={profilePhoto}
+          alt="Sumit Kumar Jha"
+          className="relative top-[-5rem] left-[45rem] h-20 w-20 bg-blue-violet rounded-full my-10"
+        />
       </div>
     </>
   );
 };
 
-export default Navbar;
+export default SeparateNavbar;
