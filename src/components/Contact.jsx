@@ -4,6 +4,7 @@ import linkedin from "../assets/linkedin.svg";
 import gmail from "../assets/gmail.svg";
 import forwardArrow from "../assets/forwardArrow.svg";
 import { animate, motion, useInView } from "framer-motion";
+import { ContactPage } from "@mui/icons-material";
 
 const Contact = ({ id }) => {
   const ref = useRef(null);
@@ -14,19 +15,22 @@ const Contact = ({ id }) => {
 
   const contacts = [
     {
-      name: "Github",
-      link: "https://github.com/sumitkrjha",
-      logo: github,
-    },
-    {
       name: "Linkedin",
       link: "https://www.linkedin.com/in/-sumitkumarjha/",
       logo: linkedin,
+      color: " bg-blue-500 hover:bg-blue-800",
     },
     {
       name: "Gmail",
-      link: "jhasumit4742@gmail.com",
+      link: "mailto:jhasumit4742@gmail.com",
       logo: gmail,
+      color: "bg-red-500 hover:bg-red-700",
+    },
+    {
+      name: "Github",
+      link: "https://github.com/sumitkrjha",
+      logo: github,
+      color: " bg-[#24292F] hover:bg-[#1a1c20]",
     },
   ];
 
@@ -41,12 +45,12 @@ const Contact = ({ id }) => {
         <div
           id="heading"
           ref={ref}
-          className=" relative z-0 h-auto w-full flex flex-col items-center justify-center mb-3"
+          className=" relative z-0 h-auto w-full flex flex-col items-center justify-center mb-3 pl-10"
         >
           <motion.div
             ref={headingRef}
             animate={{
-              x: isInView ? ["-100%", "-80%", "-50%", "-20%", "0%"] : "-100%",
+              x: isInView ? "0%" : "-100%",
             }}
             transition={{ duration: 1, delay: 0.5 }}
             className="h-auto w-full text-4xl text-center font-bold mb-1"
@@ -57,14 +61,12 @@ const Contact = ({ id }) => {
         </div>
         <motion.section
           animate={{
-            x: isInHeadingView
-              ? ["-100%", "-80%", "-50%", "-20%", "0%"]
-              : "-100%",
+            x: isInHeadingView ? "0%" : "-100%",
           }}
           transition={{ duration: 1, delay: 0.5 }}
-          class="bg-white"
+          class="mt-4 flex p-10 gap-14 "
         >
-          <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+          <div class="py-16 px-4 mx-auto w-1/2 ">
             <form action="#" class="space-y-8">
               <div>
                 <label
@@ -132,6 +134,48 @@ const Contact = ({ id }) => {
                 Send message
               </button>
             </form>
+          </div>
+          <div
+            id="linkContainer"
+            className="relative h-auto w-1/2 border-l-4 border-blue-violet"
+          >
+            <div
+              id="or"
+              className="relative top-72 left-[-32px] h-16 w-16 p-2 rounded-full flex items-center justify-center border-2 border-white bg-deep-blue text-2xl font-semibold text-lime-green"
+            >
+              OR
+            </div>
+            <div
+              id="links"
+              className="absolute top-[-3px] h-[90%] w-full flex flex-col items-center justify-center"
+            >
+              <h1 className="text-4xl font-semibold michroma-regular pb-2 text-deep-blue">
+                Connect @
+              </h1>
+              <hr className="h-1 w-24 mb-10 bg-lime-green" />
+              {contacts.map((items) => (
+                <a href={items.link} target="_blank" rel="noreferrer">
+                  <button
+                    type="button"
+                    class={`text-white font-medium rounded-lg text-sm h-12 w-52 px-5 py-2.5 text-center inline-flex justify-between items-center me-2 mb-10 pb-2 ${items.color}`}
+                  >
+                    <div class="flex items-center">
+                      <img
+                        src={items.logo}
+                        alt={items.name}
+                        className="w-4 h-4 me-2 "
+                      />
+                      {items.name}
+                    </div>
+                    <img
+                      src={forwardArrow}
+                      alt="arrow"
+                      className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                    />
+                  </button>
+                </a>
+              ))}
+            </div>
           </div>
         </motion.section>
       </div>

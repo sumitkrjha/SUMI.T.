@@ -57,11 +57,7 @@ const Footer = () => {
           className="h-auto flex flex-col justify-center items-center"
         >
           <h1 className="text-white text-md michroma-regular mb-5">
-            Bring Your Project Idea - I'll Bring the{" "}
-            <span className="bg-lime-green text-deep-blue font-semibold p-1 mr-1">
-              MERN{" "}
-            </span>{" "}
-            Skills
+            Bring Your Project Idea - I'll Bring the MERN Skills
           </h1>
 
           <h2 className="text-white text-lg font-semibold mb-5">

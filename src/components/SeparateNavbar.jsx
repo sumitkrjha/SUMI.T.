@@ -44,11 +44,13 @@ const SeparateNavbar = () => {
           </div>
         </div>
         <div className="w-full h-1 bg-deep-blue"></div>
-        <img
-          src={profilePhoto}
-          alt="Sumit Kumar Jha"
-          className="relative top-[-5rem] left-[45rem] h-20 w-20 bg-blue-violet rounded-full my-10"
-        />
+        <Link to="/">
+          <img
+            src={profilePhoto}
+            alt="Sumit Kumar Jha"
+            className="relative top-[-5rem] left-[45rem] h-20 w-20 bg-blue-violet rounded-full my-10"
+          />
+        </Link>
       </div>
     </>
   );
