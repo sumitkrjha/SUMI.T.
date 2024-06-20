@@ -1,28 +1,42 @@
-import React from "react";
+import { FormatListBulleted } from "@mui/icons-material";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "../App.css";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const menuStyle =
     "font-medium text-lg text-deep-blue hover:text-blue-violet cursor-pointer hover:translate-y-2";
   return (
     <>
       <div id="navbarWrapper" className="h-36 w-full py-5">
-        <div id="navbarContainer" className="h-full w-full flex px-12 ">
+        <div
+          id="navbarContainer"
+          className="h-auto w-full flex flex-col lg:flex-row lg:px-12 p-3 lg:gap-0 gap-3 "
+        >
           <div
             id="logoContainer"
-            className="h-full w-1/5 pl-3 text-3xl michroma-regular flex items-center justify-start cursor-pointer hover:scale-95 "
+            className="h-full lg:w-1/5 pl-3 text-3xl michroma-regular flex items-center justify-between lg:justify-start cursor-pointer  "
           >
-            <Link to="/">
+            <Link to="/" className="hover:scale-95 comeSlowAnimation">
               SUM{" "}
-              <span className="w-20 pl-2 bg-blue-violet text-white comeSlowAnimation">
-                {" "}
-                I.T.
-              </span>{" "}
+              <span className="w-20 pl-2 bg-blue-violet text-white"> I.T.</span>{" "}
             </Link>
+            <div
+              id="listIcon"
+              className="lg:w-0 lg:hidden"
+              onClick={() => {
+                setIsOpen(!isOpen);
+              }}
+            >
+              <FormatListBulleted />
+            </div>
           </div>
           <div
             id="menuContainer"
-            className="h-full w-4/5 pr-5 flex gap-6 items-center justify-end "
+            className={`h-full lg:w-4/5 lg:pr-5 pr-0 lg:flex lg:flex-row gap-6 items-center justify-end ${
+              isOpen ? "flex flex-col mt-3" : "hidden"
+            }`}
           >
             <ul className="flex gap-3">
               <Link to="/about">
@@ -37,7 +51,7 @@ const Navbar = () => {
               {/* <li className={menuStyle}>OpenSource</li> */}
             </ul>
             <Link to="/contact">
-              <button className="h-12 w-auto p-3 border-2 border-blue-violet rounded-3xl flex items-center justify-center font-semibold text-lg text-blue-violet hover:bg-blue-violet hover:text-white hover:shadow-md hover:shadow-blue-violet active:translate-y-1">
+              <button className="h-12 w-auto p-3 border-2 border-blue-violet rounded-3xl flex items-center justify-center font-semibold  text-base lg:text-lg text-blue-violet hover:bg-blue-violet hover:text-white hover:shadow-md hover:shadow-blue-violet active:translate-y-1">
                 Let's Connect
               </button>
             </Link>

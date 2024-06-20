@@ -40,7 +40,7 @@ const Footer = () => {
     <>
       <div
         id="footerContainer"
-        className="h-auto w-full p-5 relative top-[23rem] bg-blue-violet flex flex-col items-center justify-center"
+        className="h-auto w-full p-5 relative top-[49rem] lg:top-[23rem] bg-blue-violet flex flex-col items-center justify-center"
       >
         <div
           id="logoContainer"
@@ -56,7 +56,7 @@ const Footer = () => {
           id="logoContainer"
           className="h-auto flex flex-col justify-center items-center"
         >
-          <h1 className="text-white text-md michroma-regular mb-5">
+          <h1 className="text-white text-center text-md michroma-regular mb-5">
             Bring Your Project Idea - I'll Bring the MERN Skills
           </h1>
 

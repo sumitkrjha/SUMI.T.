@@ -30,7 +30,7 @@ const Education = ({ id }) => {
   return (
     <div
       className={`relative p-5 mb-8 ${
-        id == "1" ? "top-[2rem]" : "top-[27rem]"
+        id == "1" ? "top-[2rem]" : "lg:top-[27rem] top-[35rem]"
       }`}
     >
       <div
@@ -51,7 +51,7 @@ const Education = ({ id }) => {
             transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s",
           }}
           id="educationHistory"
-          className="w-full h-auto px-20 mb-10"
+          className="w-full h-auto lg:px-20 mb-10"
         >
           <h1 className="w-full text-2xl michroma-regular mb-3">
             {items.degree}

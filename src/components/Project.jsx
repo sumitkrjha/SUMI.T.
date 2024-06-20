@@ -104,14 +104,14 @@ const Project = ({ id }) => {
     <>
       <div
         id="wrapper"
-        className={`absolute w-full h-[80rem] bg-blue-violet ${
-          id == "1" ? "top-[32rem]" : "top-[158rem]"
+        className={`absolute w-full h-[190rem] lg:h-[80rem] bg-blue-violet ${
+          id == "1" ? "top-[32rem]" : "lg:top-[158rem] top-[258rem]"
         }`}
       ></div>
       <div
         id="projectWrapper"
-        className={`relative h-auto w-full pt-28 px-20 mb-10 flex flex-col items-center justify-center ${
-          id == "1" ? "top-[-72px]" : "top-[402px]"
+        className={`relative h-auto w-full pt-28 px-0 lg:px-20 mb-10 flex flex-col items-center justify-center ${
+          id == "1" ? "top-[-72px]" : "lg:top-[402px] top-[605px]"
         } `}
       >
         <h1
@@ -131,16 +131,19 @@ const Project = ({ id }) => {
             animate={animation}
             transition={{ duration: 0.5, delay: 0.65 }}
             id="projectContainer"
-            className={`h-auto w-[90%] p-5 mb-5 border-2 text-white bg-deep-blue rounded-3xl flex items-center justify-center hover:scale-105 transition-all ${
+            className={`h-auto w-[90%] p-5 mb-5 border-2 text-white bg-deep-blue rounded-3xl flex flex-col lg:flex-row items-center justify-center hover:scale-105 transition-all ${
               index === 1 ? "xl:flex-row-reverse" : "xl:flex-row"
             }`}
           >
-            <div id="imageContainer" className="w-2/5 h-auto flex items-center">
+            <div
+              id="imageContainer"
+              className="lg:w-2/5 h-auto flex items-center"
+            >
               <img src={items.image} alt="" className="rounded-xl h-72" />
             </div>
             <div
               id="detailsContainer"
-              className="w-3/5 h-auto py-5 pr-5 pl-10 "
+              className="lg:w-3/5 w-[319px] h-auto py-5 pr-5 pl-10 "
             >
               <h1 className="text-2xl font-bold  text-lime-green text-center mb-5 michroma-regular">
                 {items.heading}
@@ -161,7 +164,7 @@ const Project = ({ id }) => {
               {items.links.map((buttons) => (
                 <ul
                   id="button"
-                  className="flex items-center justify-center gap-3"
+                  className="flex flex-col lg:flex-row items-center justify-center gap-3"
                 >
                   <a href={buttons.Github} target="_blank" rel="noreferrer">
                     <button className="text-white bg-[#24292F] hover:bg-[#1a1c20] font-medium rounded-lg text-sm h-12 w-36 px-5 py-2.5 text-center inline-flex justify-between items-center mb-2 pb-2">

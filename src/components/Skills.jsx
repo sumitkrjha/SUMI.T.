@@ -67,7 +67,7 @@ const Skills = () => {
       <div
         ref={ref}
         id="skillsContainer"
-        className="relative top-[440px] mb-10 px-20 h-auto w-full flex-col items-center justify-center"
+        className="relative top-[640px] lg:top-[440px] mb-10 px-2 lg:px-20 h-auto w-full flex-col items-center justify-center"
       >
         <motion.div
           variants={{
@@ -78,7 +78,7 @@ const Skills = () => {
           animate={animation}
           transition={{ duration: 0.5, delay: 0.4 }}
           id="categoryContainer"
-          className="h-auto w-full bg-white rounded-xl grid grid-cols-3 border-2"
+          className="h-auto w-full bg-white rounded-xl grid grid-cols-1 lg:grid-cols-3 border-2"
         >
           {skillsData.map((items) => (
             <div

@@ -27,7 +27,7 @@ const Hero = () => {
           animate="visible"
           transition={{ duration: 0.3, delay: 0.6 }}
           id="heroHeader"
-          className="relative p-5 flex flex-col items-center justify-center"
+          className="relative lg:top-0 top-5 p-5 flex flex-col items-center justify-center"
         >
           <h1
             id="heading"
@@ -44,7 +44,7 @@ const Hero = () => {
           <img
             src={profilePhoto}
             alt="Sumit Kumar Jha"
-            className="h-72 w-72 bg-blue-violet rounded-full my-10"
+            className=" h-48 w-48 lg:h-72 lg:w-72 bg-blue-violet rounded-full my-10"
           />
         </motion.div>
         <div ref={ref} id="heroFooter" className=" px-5 pt-5 mt-7">
@@ -59,7 +59,11 @@ const Hero = () => {
             id="imageContainer"
             className=" px-10 flex items-center justify-center"
           >
-            <img src={heroDevices} alt="" className="h-auto max-w-[860px]" />
+            <img
+              src={heroDevices}
+              alt=""
+              className="h-auto max-w-[345px] lg:max-w-[860px]"
+            />
           </motion.div>
         </div>
       </div>

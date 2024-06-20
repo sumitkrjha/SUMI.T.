@@ -38,8 +38,8 @@ const Contact = ({ id }) => {
     <>
       <div
         id="contactWrapper"
-        className={`h-auto w-full mt-10 p-10 bg-white relative ${
-          id == "1" ? "top-[2rem]" : "top-[23rem]"
+        className={`h-auto w-full mt-10 py-10 lg:p-10 bg-white relative ${
+          id == "1" ? "top-[2rem]" : "lg:top-[23rem] top-[30rem]"
         }`}
       >
         <div
@@ -64,9 +64,9 @@ const Contact = ({ id }) => {
             x: isInHeadingView ? "0%" : "-100%",
           }}
           transition={{ duration: 1, delay: 0.5 }}
-          class="mt-4 flex p-10 gap-14 "
+          class="mt-4 flex flex-col lg:flex-row lg:p-10 gap-14 "
         >
-          <div class="py-16 px-4 mx-auto w-1/2 ">
+          <div class="py-16 lg:px-4 mx-4 lg:mx-auto lg:w-1/2 ">
             <form action="#" class="space-y-8">
               <div>
                 <label
@@ -137,17 +137,17 @@ const Contact = ({ id }) => {
           </div>
           <div
             id="linkContainer"
-            className="relative h-auto w-1/2 border-l-4 border-blue-violet"
+            className="relative h-auto lg:w-1/2 border-t-4 lg:border-l-4 border-blue-violet"
           >
             <div
               id="or"
-              className="relative top-72 left-[-32px] h-16 w-16 p-2 rounded-full flex items-center justify-center border-2 border-white bg-deep-blue text-2xl font-semibold text-lime-green"
+              className="relative top-[-2rem] lg:top-72 left-[135px] lg:left-[-32px] h-16 w-16 p-4 rounded-full flex items-center justify-center border-2 border-white bg-deep-blue text-2xl font-semibold text-lime-green"
             >
               OR
             </div>
             <div
               id="links"
-              className="absolute top-[-3px] h-[90%] w-full flex flex-col items-center justify-center"
+              className="absolute top-56 lg:top-[-3px] h-[90%] w-full flex flex-col items-center justify-center"
             >
               <h1 className="text-4xl font-semibold michroma-regular pb-2 text-deep-blue">
                 Connect @

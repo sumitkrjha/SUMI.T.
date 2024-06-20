@@ -18,12 +18,12 @@ const About = () => {
     <>
       <div
         id="aboutContainer"
-        className="absolute h-[662px] w-full bg-blue-violet flex items-start pt-36"
+        className="absolute h-[862px] lg:h-[662px] w-full bg-blue-violet flex items-start pt-36"
       >
         <div
           ref={ref}
           id="aboutwrapper"
-          className="relative h-auto w-full px-48 flex flex-col justify-center items-center"
+          className="relative h-auto w-full pr-40 pl-36 lg:px-48 flex flex-col justify-center items-center"
         >
           <motion.div
             variants={{
@@ -38,10 +38,11 @@ const About = () => {
               id="heading"
               className="text-white font-bold text-center text-3xl mb-5"
             >
-              Hi, I'm Sumit Kumar Jha. Nice to meet you.
+              Hi, I'm Sumit Kumar Jha.{" "}
+              <span className="block lg:inline-block">Nice to meet you.</span>
             </h1>
-            <p id="aboutMe" className="text-white ">
-              <span className=" font-medium text-lg text-justify block px-24">
+            <p id="aboutMe" className="text-white w-[345px] lg:w-full">
+              <span className=" font-medium text-lg text-justify block px-4 lg:px-24">
                 Built OsteoAI, an AI-powered medical app for bone analysis using
                 ReactJS, Tailwind CSS, and MongoDB. JWT auth ensures user
                 security. <br />
