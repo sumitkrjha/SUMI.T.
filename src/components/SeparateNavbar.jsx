@@ -65,7 +65,7 @@ const SeparateNavbar = () => {
           <img
             src={profilePhoto}
             alt="Sumit Kumar Jha"
-            className="relative top-[-5rem] left-[9rem] lg:left-[45rem] h-20 w-20 bg-blue-violet rounded-full my-10"
+            className="relative top-[-5rem] left-[10rem] lg:left-[45rem] h-20 w-20 bg-blue-violet rounded-full my-10"
           />
         </Link>
       </div>
