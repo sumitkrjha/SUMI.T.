@@ -137,11 +137,11 @@ const Contact = ({ id }) => {
           </div>
           <div
             id="linkContainer"
-            className="relative h-auto lg:w-1/2 border-t-4 lg:border-l-4 border-blue-violet"
+            className="relative h-auto lg:w-1/2 border-t-4 lg:border-t-0 lg:border-l-4 border-blue-violet"
           >
             <div
               id="or"
-              className="relative top-[-2rem] lg:top-72 left-[135px] lg:left-[-32px] h-16 w-16 p-4 rounded-full flex items-center justify-center border-2 border-white bg-deep-blue text-2xl font-semibold text-lime-green"
+              className="relative top-[-2rem] lg:top-72 min-[400px]:left-1/2 left-[135px] lg:left-[-32px] h-16 w-16 p-4 rounded-full flex items-center justify-center border-2 border-white bg-deep-blue text-2xl font-semibold text-lime-green"
             >
               OR
             </div>

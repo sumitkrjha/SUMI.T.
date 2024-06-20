@@ -143,17 +143,17 @@ const Project = ({ id }) => {
             </div>
             <div
               id="detailsContainer"
-              className="lg:w-3/5 w-[319px] h-auto py-5 pr-5 pl-10 "
+              className="lg:w-3/5 w-[319px] h-auto sm:px-0 py-5 lg:pr-5 lg:pl-10 "
             >
               <h1 className="text-2xl font-bold  text-lime-green text-center mb-5 michroma-regular">
                 {items.heading}
               </h1>
-              <p className=" text-base text-white text-justify mb-2">
+              <p className=" text-base sm:text-xl text-white text-justify mb-2">
                 {items.description}
               </p>
               <ul className="mb-8 pl-5">
                 {items.points.map((point) => (
-                  <li className="list-decimal">{point}</li>
+                  <li className="list-decimal sm:text-xl">{point}</li>
                 ))}
               </ul>
               <ul className="h-auto w-auto flex gap-3 mb-9 items-center justify-center flex-wrap">
