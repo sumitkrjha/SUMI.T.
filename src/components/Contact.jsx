@@ -1,12 +1,14 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import github from "../assets/github.svg";
 import linkedin from "../assets/linkedin.svg";
 import gmail from "../assets/gmail.svg";
 import forwardArrow from "../assets/forwardArrow.svg";
 import { animate, motion, useInView } from "framer-motion";
-import { ContactPage } from "@mui/icons-material";
+import toast from "react-hot-toast";
 
 const Contact = ({ id }) => {
+  const [isLoading, setIsLoading] = useState(false);
+
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -34,6 +36,30 @@ const Contact = ({ id }) => {
     },
   ];
 
+  const sendMessage = async (event) => {
+    event.preventDefault();
+    setIsLoading(true);
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", import.meta.env.VITE_PUBLIC_KEY);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setIsLoading(false);
+      toast.success("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      setIsLoading(false);
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
   return (
     <>
       <div
@@ -67,7 +93,7 @@ const Contact = ({ id }) => {
           class="mt-4 flex flex-col lg:flex-row lg:p-10 gap-14 "
         >
           <div class="py-16 lg:px-4 mx-4 lg:mx-auto lg:w-1/2 ">
-            <form action="#" class="space-y-8">
+            <form class="space-y-8" onSubmit={sendMessage}>
               <div>
                 <label
                   for="name"
@@ -78,6 +104,7 @@ const Contact = ({ id }) => {
                 <input
                   type="text"
                   id="name"
+                  name="name"
                   class="shadow-sm bg-gray-50 border border-gray-300 text-deep-blue text-sm rounded-lg block w-full p-2.5"
                   placeholder="John Doe"
                   required
@@ -93,6 +120,7 @@ const Contact = ({ id }) => {
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   class="shadow-sm bg-gray-50 border border-gray-300 text-deep-blue text-sm rounded-lg block w-full p-2.5"
                   placeholder="name@email.com"
                   required
@@ -108,6 +136,7 @@ const Contact = ({ id }) => {
                 <input
                   type="text"
                   id="subject"
+                  name="subject"
                   class="block p-3 w-full text-sm text-deep-blue bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 "
                   placeholder="Let me know how can I help you"
                   required
@@ -122,17 +151,24 @@ const Contact = ({ id }) => {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   rows="6"
                   class="block p-2.5 w-full text-sm text-deep-blue bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 "
                   placeholder="Leave a comment..."
                 ></textarea>
               </div>
-              <button
-                type="submit"
-                class="h-12 w-auto p-3 border-2 border-blue-violet rounded-3xl flex items-center justify-center font-semibold text-lg text-blue-violet hover:bg-blue-violet hover:text-white hover:shadow-md hover:shadow-blue-violet active:translate-y-1"
-              >
-                Send message
-              </button>
+              {isLoading ? (
+                <h1 className="text-lg text-deep-blue font-semibold ">
+                  Loading...
+                </h1>
+              ) : (
+                <button
+                  type="submit"
+                  class="h-12 w-auto p-3 border-2 border-blue-violet rounded-3xl flex items-center justify-center font-semibold text-lg text-blue-violet hover:bg-blue-violet hover:text-white hover:shadow-md hover:shadow-blue-violet active:translate-y-1"
+                >
+                  Send Message
+                </button>
+              )}
             </form>
           </div>
           <div

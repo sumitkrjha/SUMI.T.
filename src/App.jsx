@@ -6,6 +6,7 @@ import AboutAndSkills from "./pages/AboutAndSkills";
 import ProjectPage from "./pages/ProjectPage";
 import EducationPage from "./pages/EducationPage";
 import ContactPage from "./pages/ContactPage";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/education" element={<EducationPage />}></Route>
           <Route path="/contact" element={<ContactPage />}></Route>
         </Routes>
+        <Toaster />
       </BrowserRouter>
     </>
   );
