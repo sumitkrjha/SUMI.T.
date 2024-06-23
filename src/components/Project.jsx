@@ -80,15 +80,13 @@ const Project = ({ id }) => {
       image: Portfolio,
       heading: "SUMI.T.",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo nobis molestiae sapiente ad obcaecati repellendus ipsam. Soluta provident optio eaque ipsum accusamus, aliquid possimus ipsam dicta, dolor error repellendus nobis et blanditiis fugiat ex sequi voluptatibus nostrum. Ex rem aliquam praesentium modi nemo atque corrupti velit, quam consectetur labore reiciendis.",
+        "SUMI.T. is a visually engaging portfolio website built with ReactJS and styled with Tailwind CSS. It incorporates subtle yet impactful animations using Framer Motion to create a dynamic user experience.",
       points: [
-        "AI Analysis: Utilizes AI to analyze X-ray images.",
-        "Secure Access: JWT authentication restricts access to authorized professionals.",
-        "Streamlined Workflow: Formik simplifies data entry and validation.",
-        "Scalable Storage: MongoDB Atlas securely stores medical data.",
-        "Efficient Communication: Context API facilitates data exchange.",
+        "Smooth Animations: Framer Motion creates tasteful animations that enhance user engagement.",
+        "Clear Navigation: Five distinct pages (Home, About, Education, Projects, Contact) offer a well-organized experience.",
+        "Effortless Contact: Web3forms integrates a user-friendly contact form that delivers inquiries directly to your Gmail - no server needed",
       ],
-      tech: ["ReactJS", "Tailwind CSS", "Framer Motion"],
+      tech: ["ReactJS", "Tailwind CSS", "Framer Motion", "Web3Forms"],
       links: [
         {
           name: "osteoai",
@@ -148,12 +146,14 @@ const Project = ({ id }) => {
               <h1 className="text-2xl font-bold  text-lime-green text-center mb-5 michroma-regular">
                 {items.heading}
               </h1>
-              <p className=" text-base sm:text-xl text-white text-justify mb-2">
+              <p className=" text-base sm:text-xl lg:text-base text-white text-justify mb-2">
                 {items.description}
               </p>
               <ul className="mb-8 pl-5">
                 {items.points.map((point) => (
-                  <li className="list-decimal sm:text-xl">{point}</li>
+                  <li className="list-decimal sm:text-xl lg:text-base">
+                    {point}
+                  </li>
                 ))}
               </ul>
               <ul className="h-auto w-auto flex gap-3 mb-9 items-center justify-center flex-wrap">
