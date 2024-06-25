@@ -20,23 +20,25 @@ Try the live app at (Live Demo)[https://sumitkrjha.onrender.com].
 ## How to Fork and Run the App
 
 ### Steps to Run the App Locally
+1. **Fork the Repository**
+    Click on the fork button on the upper right hand side of the repo.
 
-1. **Clone the Repository**
+2. **Clone the Repository**
    ```bash
    git clone <repository_url>
    cd <repository_folder>```
 
-2. **Generate a Unique Key**
+3. **Generate a Unique Key**
    Visit Web3Forms.com and generate a unique key by entering your email ID. The unique key will be sent to your email.
 
-3. **Create a .env File**
+4. **Create a .env File**
    In the root directory of the project, create a .env file and add your unique key as follows:
     ```bash
     VITE_APP_PUBLIC_KEY=<unique key>
-4. **Install Dependencies**
+5. **Install Dependencies**
     ```bash
     npm install
-5. **Start the Development Server**
+6. **Start the Development Server**
     ```bash
     npm run dev
 
