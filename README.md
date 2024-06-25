@@ -7,7 +7,7 @@ SUMI.T. is a portfolio website designed to be a comprehensive destination where 
 The primary purpose of SUMI.T. is to showcase the creator's work and achievements in an organized and accessible manner. Visitors can explore various sections of the site to get a complete picture of the creator's skills and experiences.
 
 ### Live Demo
-Try the live app at (Live Demo)[https://sumitkrjha.onrender.com].
+Try the live app at [Live Demo](https://sumitkrjha.onrender.com).
 
 ## Tech Used and Why
 
