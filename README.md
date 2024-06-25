@@ -3,6 +3,9 @@
 ## About SUMI.T.
 SUMI.T. is a portfolio website designed to be a comprehensive destination where users can view projects, achievements, and learn about the creator in one place. The application is built using modern web technologies to ensure a fast, responsive, and visually appealing user experience.
 
+    ![portfolio](https://github.com/sumitkrjha/SUMI.T./assets/167055828/95a52c1f-872e-4a25-bd27-723b74071d0a)
+
+
 ### Purpose
 The primary purpose of SUMI.T. is to showcase the creator's work and achievements in an organized and accessible manner. Visitors can explore various sections of the site to get a complete picture of the creator's skills and experiences.
 
