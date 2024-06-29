@@ -7,6 +7,7 @@ import ProjectPage from "./pages/ProjectPage";
 import EducationPage from "./pages/EducationPage";
 import ContactPage from "./pages/ContactPage";
 import { Toaster } from "react-hot-toast";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/projects" element={<ProjectPage />}></Route>
           <Route path="/education" element={<EducationPage />}></Route>
           <Route path="/contact" element={<ContactPage />}></Route>
+          <Route path="*" element={<NotFound />}></Route>
         </Routes>
         <Toaster />
       </BrowserRouter>
