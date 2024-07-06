@@ -52,7 +52,7 @@ const Project = ({ id }) => {
         {
           Github: "https://github.com/sumitkrjha/OsteoAI",
           Live: "https://osteoai.onrender.com",
-          Video: "https://youtube.com",
+          Video: "https://youtu.be/kgDZvPKTUyk",
         },
       ],
     },
@@ -72,7 +72,7 @@ const Project = ({ id }) => {
         {
           Github: "https://github.com/sumitkrjha/devlinks",
           Live: "https://devlinks-nsir.onrender.com",
-          Video: "https://youtube.com",
+          Video: "https://youtu.be/QXd45ewu7fw",
         },
       ],
     },
@@ -92,7 +92,7 @@ const Project = ({ id }) => {
           name: "osteoai",
           Github: "https://github.com/sumitkrjha/SUMI.T.",
           Live: "https://sumitkrjha.onrender.com",
-          Video: "https://youtube.com",
+          Video: "https://youtu.be/1k1ZVONnmPE",
         },
       ],
     },
