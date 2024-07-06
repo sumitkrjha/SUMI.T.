@@ -1,7 +1,9 @@
 import profilePhoto from "../assets/profilePhoto.png";
 import heroDevices from "../assets/hero-devices.svg";
+import cv from "../assets/cv.png";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
+import { redirect } from "react-router-dom";
 const Hero = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: "all", once: true });
@@ -46,6 +48,14 @@ const Hero = () => {
             alt="Sumit Kumar Jha"
             className=" h-48 w-48 lg:h-72 lg:w-72 bg-blue-violet rounded-full my-10"
           />
+          <a
+            href="https://drive.google.com/file/d/1Lxkgs7Ak8iBZg0o-QPAmuOKwd0ru3UZg/view"
+            target="_blank"
+          >
+            <button className="h-12 w-auto p-5 border-2 border-blue-violet rounded-3xl flex items-center justify-center font-semibold  text-base lg:text-lg text-blue-violet hover:bg-blue-violet hover:text-white hover:shadow-md hover:shadow-blue-violet active:translate-y-1">
+              My Resume
+            </button>
+          </a>
         </motion.div>
         <div ref={ref} id="heroFooter" className=" px-5 pt-5 mt-7">
           <motion.div
