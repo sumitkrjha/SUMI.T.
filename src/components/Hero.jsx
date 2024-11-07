@@ -49,7 +49,7 @@ const Hero = () => {
             className=" h-48 w-48 lg:h-72 lg:w-72 bg-blue-violet rounded-full my-10"
           />
           <a
-            href="https://drive.google.com/file/d/1fZx3ifZCZ8Eq7HFk102oSgAWqGXqN9SE/view"
+            href="https://drive.google.com/file/d/1ATy6gaqMv7-2Dvn76QeF1n4GIOP_Vp5Z/view?usp=sharing"
             target="_blank"
           >
             <button className="h-12 w-auto p-5 border-2 border-blue-violet rounded-3xl flex items-center justify-center font-semibold  text-base lg:text-lg text-blue-violet hover:bg-blue-violet hover:text-white hover:shadow-md hover:shadow-blue-violet active:translate-y-1">
